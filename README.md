@@ -54,6 +54,7 @@ Sequence Diagram
 Output (screenshots) of Test Cases
 
 Web Interface
+
 ![image](https://github.com/user-attachments/assets/a8760b82-51c5-4e87-ad23-535ab48bed89)
 
 Wealth Index analysis for upto 10 images simultaneously:
