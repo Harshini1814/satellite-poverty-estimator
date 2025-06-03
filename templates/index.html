@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poverty Level Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">🌍 Poverty Estimation Using Satellite Imagery</h1>
+        
+        <form class="upload-box" method="POST" action="/upload" enctype="multipart/form-data">
+            <input type="file" id="file-input" name="files" multiple accept="image/*" hidden>
+            
+            <div class="drop-zone" onclick="document.getElementById('file-input').click()">
+                <!-- <img src="https://cdn-icons-png.flaticon.com/512/725/725085.png" class="upload-icon"> -->
+                <p>Click to upload satellite images</p>
+                <small>(Max 10 images, PNG/JPG/JPEG)</small>
+            </div>
+            
+            <button type="submit" class="analyze-btn"><b>Predict Wealth Index</button></b></button>
+        </form>
+    </div>
+</body>
+</html>

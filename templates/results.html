@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">📊 Wealth Index Analysis</h1>
+        <b><a href="/" class="back-btn">← New Analysis</a></b>
+        
+        <div class="results-grid">
+            {% for pred in predictions %}
+            <div class="result-card">
+                <img src="{{ url_for('send_file', filename=pred.filename) }}" class="result-image">
+                
+                <div class="result-content">
+                    <h3>{{ pred.filename }}</h3>
+                    
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: {{ pred.index }}%; background: {{ pred.color }};">
+                            <span>{{ pred.index }}%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="class-badge" style="background: {{ pred.color }};">
+                        {{ pred.class }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
